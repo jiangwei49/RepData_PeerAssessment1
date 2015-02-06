@@ -7,10 +7,6 @@ output: html_document
 
 This is the report for assignment 1, for Reproducible Research.
 
-1. .Rmd, .html
-2. Git URL, top level URL github.com/rdpeng/filehash, the repository
-3. submit hash of the commit
-
 ### Loading and preprocessing the data
 First, download and extract the dataset [Activity monitoring data](https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip), we got activity.csv. Then load the data and check the summary.
 

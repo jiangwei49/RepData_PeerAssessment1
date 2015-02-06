@@ -7,43 +7,27 @@ output: html_document
 
 This is the report for assignment 1, for Reproducible Research.
 
-1. .Rmd, .html
-2. Git URL, top level URL github.com/rdpeng/filehash, the repository
-3. submit hash of the commit
-
 ### Loading and preprocessing the data
 First, download and extract the dataset [Activity monitoring data](https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip), we got activity.csv. Then load the data and check the summary.
 
 
 ```r
 ## setwd("d:/R/RStudio/coursera/5.Reproducible_research")
-## unzip("./repdata_data_activity.zip")
+unzip("./activity.zip")
 rdata <- read.csv("activity.csv",header=TRUE,as.is=TRUE)
-```
-
-```
-## Warning in file(file, "rt"): cannot open file 'activity.csv': No such file
-## or directory
-```
-
-```
-## Error in file(file, "rt"): cannot open the connection
-```
-
-```r
 rdata$date <- as.Date(strptime(rdata$date, format="%Y-%m-%d"))
 rdata$date.f <- as.factor(rdata$date)
 head(rdata)
 ```
 
 ```
-##   steps       date interval     date.f interval.f
-## 1    NA 2012-10-01        0 2012-10-01          0
-## 2    NA 2012-10-01        5 2012-10-01          5
-## 3    NA 2012-10-01       10 2012-10-01         10
-## 4    NA 2012-10-01       15 2012-10-01         15
-## 5    NA 2012-10-01       20 2012-10-01         20
-## 6    NA 2012-10-01       25 2012-10-01         25
+##   steps       date interval     date.f
+## 1    NA 2012-10-01        0 2012-10-01
+## 2    NA 2012-10-01        5 2012-10-01
+## 3    NA 2012-10-01       10 2012-10-01
+## 4    NA 2012-10-01       15 2012-10-01
+## 5    NA 2012-10-01       20 2012-10-01
+## 6    NA 2012-10-01       25 2012-10-01
 ```
 
 ### What is the mean total number of steps taken per day?
